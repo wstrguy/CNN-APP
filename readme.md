@@ -12,6 +12,10 @@ As a Chief Editor at CNN, you should be able to post new news, edit existing one
 
     This documentation provides guidelines on how to consume the APIs endpoint created for the CNN website.
 
+<h2>Postman API Documentation</h2>
+
+[API link] (https://documenter.getpostman.com/view/25799451/2s93JzLfn6)
+
 <h1>Authentication</h1>
 
 The API endpoints are protected, and you will need to log in to access them as a Chief-Editor. To log in, you will need to make a POST request to the 'login' endpoint with your 'Email' and 'Password'. The response will contain an **access token** that you will use to access other endpoints.
@@ -181,3 +185,7 @@ The response body will contain an array of all available news.
     }
 ]
 ```
+
+**Postman API Documentation**
+
+[API link] (https://documenter.getpostman.com/view/25799451/2s93JzLfn6)
