@@ -1,8 +1,8 @@
-#<p align="center">Credit-line News Network (CNN) API Documentation</p>
+<h1><p align="center">Credit-line News Network (CNN) API Documentation</p></h1>
 
 ![Schema Diagram](https://res.cloudinary.com/drd06lih3/image/upload/v1679144772/Screenshot_2023-03-17_at_9.19.11_AM_rbp9cx.png)
 
-#Introduction
+<h1>Introduction</h1> 
 
 Credit-line News Network (CNN) is the largest syndicate of breaking news and other news worldwide. They focus on the millennial audience. They’ve contracted the project for Grazac to rethink the news experience for their website.
 
@@ -12,21 +12,29 @@ As a Chief Editor at CNN, you should be able to post new news, edit existing one
 
     This documentation provides guidelines on how to consume the APIs endpoint created for the CNN website.
 
-#Authentication
+<h2>Postman API Documentation</h2>
+
+[API link] (https://documenter.getpostman.com/view/25799451/2s93JzLfn6)
+
+<h1>Authentication</h1>
 
 The API endpoints are protected, and you will need to log in to access them as a Chief-Editor. To log in, you will need to make a POST request to the 'login' endpoint with your 'Email' and 'Password'. The response will contain an **access token** that you will use to access other endpoints.
+
 ``` javascript
 POST /api/login
 ```
-#####Request Body
+
+**Request Body**
 
 Parameter    | Type          | Description
 ------------ | ------------- | ------------
 Email        | String        | Your email address
 Password     | String        | Your Password
 
-###Response
+**Response**
+
 The response body will contain the access token that you will use to access other endpoints.
+
 ``` javascript
 {
     "message": "Editor logged in successfully",
@@ -34,13 +42,16 @@ The response body will contain the access token that you will use to access othe
 }
 ```
 
-#Create an Account
+<h1>Create an Account</h1>
 
 If you do not have an account, you can create one by making a POST request to the register endpoint with your First Name, Last Name, Email, and Password.
+
 ``` javascript
 POST /api/signup
 ```
-#####Request Body
+
+**Request Body**
+
 Parameter    | Type          | Description
 ------------ | ------------- | ------------
 First_name   | String        | Your first name
@@ -48,41 +59,64 @@ Last_name    | String        | Your last name
 Email        | String        | Your email address
 Password     | String        | Your Password
 
+**Response**
 
-#News
-##Create News
+The response body will contain a success message.
+
+``` javascript
+{
+    "message": "Editor created successfully",
+    "editor": "64151e17bcf6b45c31c673c0"
+}
+```
+
+<h1>News</h1>
+
+<h3>Create News</h3>
+
 As a Chief Editor, you can post new news by making a POST request to the news endpoint with the Title and Body of the news.
+
 ``` javascript
 POST /api/news
 ```
-#####Request Body
+
+**Request Body**
+
 Parameter    | Type          | Description
 ------------ | ------------- | ------------
 Title        | String        | title of the news
 Body         | String        | body of the news
 
-###Response
+**Response**
+
 The response body will contain the details of the news that was created.
 
 
-#Edit News
+<h1>Edit News</h1>
+
 As a Chief Editor, you can edit existing news by making a PUT request to the edit-news/{id} endpoint with the Title and Body of the news.
+
 ``` javascript
 PUT /api/edit-news/{id}
 ```
-#####Request Parameters
+
+**Request Parameters**
+
 Parameter    | Type          | Description
 ------------ | ------------- | ------------
 id           | Integer       | ID of the news to edit
 
-#####Request Body
+**Request Body**
+
 Parameter    | Type          | Description
 ------------ | ------------- | ------------
 Title        | String        | updated title of the news
 Body         | String        | updated body of the news
 
-###Response
+**Response**
+
 The response body will contain the details of the news that was updated.
+
 ``` javascript
 {
     "id": 1,
@@ -93,19 +127,24 @@ The response body will contain the details of the news that was updated.
 }
 ```
 
-#Delete News
+<h1>Delete News</h1>
 
 As a Chief Editor, you can delete a news by making a DELETE request to the delete-news/{id} endpoint with the ID of the news to be deleted.
+
 ``` javascript
 DELETE /api/delete-news/{id}
 ```
-#####Request Parameters
+
+**Request Parameters**
+
 Parameter    | Type          | Description
 ------------ | ------------- | ------------
 id           | Integer       | ID of the news to delete
 
-###Response
+**Response**
+
 The response body will contain a success message.
+
 ``` javascript
 {
     "message": "News deleted successfully",
@@ -116,14 +155,18 @@ The response body will contain a success message.
 }
 ```
 
-#Read All News
+<h1>Read All News</h1>
 
 To read all available news, you can make a GET request to the news endpoint.
+
 ``` javascript
 GET /api/news
 ```
-####Response
+
+**Response**
+
 The response body will contain an array of all available news.
+
 ``` javascript
 [
     {
@@ -142,3 +185,7 @@ The response body will contain an array of all available news.
     }
 ]
 ```
+
+**Postman API Documentation**
+
+[API link] (https://documenter.getpostman.com/view/25799451/2s93JzLfn6)
