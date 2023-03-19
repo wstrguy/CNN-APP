@@ -19,9 +19,9 @@ exports.isAuthenticated = async (req, res, next) => {
     req.user = decoded;
     next();
   } catch (error) {
-    console.log(error.message);
+    // console.log(error.message);
     return res.status(500).json({
-      message: "Authorization error 🔥🔥🔥🔥🔥🔥🔥🔥🔥",
+      message: error.message,
     });
   }
 };
